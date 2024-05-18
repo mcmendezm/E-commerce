@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'dancing': ['"Dancing Script"', 'cursive'],
+        'orbitron': ['"Orbitron"', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
