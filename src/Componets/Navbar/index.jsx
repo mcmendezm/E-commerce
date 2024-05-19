@@ -4,7 +4,7 @@ import { FaCartPlus } from "react-icons/fa6";
 const Navbar = () => {
         const activeStyle = "underline underline-offset-4"
     return (
-        <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-xs font-light font-orbitron">
+        <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-xs font-light font-orbitron">
             <ul className="flex items-center gap-5">
                 <li className="font-semibold text-4xl font-dancing mr-10">
                     <NavLink
