@@ -1,10 +1,14 @@
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../Context";
 import { NavLink } from "react-router-dom";
 import { FaCartPlus } from "react-icons/fa6";
 
+
 const Navbar = () => {
-        const activeStyle = "underline underline-offset-4"
+    const activeStyle = "underline underline-offset-4 text-customYellow"
+    const context= useContext(ShoppingCartContext)
     return (
-        <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-xs font-light font-orbitron">
+        <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light font-orbitron bg-black text-white">
             <ul className="flex items-center gap-5">
                 <li className="font-semibold text-4xl font-dancing mr-10">
                     <NavLink
@@ -24,11 +28,20 @@ const Navbar = () => {
                 </li>
                 <li>
                     <NavLink
-                        to='/clothes'
+                        to='/men-clothing'
                         className={({ isActive }) =>
                         isActive ? activeStyle : undefined
                         }>
-                        Clothes
+                        Men&apos;s Clothing
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                    to='/women-clothing'
+                    className={({ isActive }) =>
+                    isActive ? activeStyle : undefined
+                    }>
+                        Women&apos;s Clothing 
                     </NavLink>
                 </li>
                 <li>
@@ -42,20 +55,11 @@ const Navbar = () => {
                 </li>
                 <li>
                     <NavLink 
-                    to='/furnitures'
+                    to='/jewelery'
                     className={({ isActive }) =>
                     isActive ? activeStyle : undefined
                     }>
-                        Furnitures
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink 
-                    to='/toys'
-                    className={({ isActive }) =>
-                    isActive ? activeStyle : undefined
-                    }>
-                        Toys
+                        Jewelery
                     </NavLink>
                 </li>
                 <li>
@@ -91,8 +95,9 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/my-order'>
-                        <FaCartPlus />
+                    <NavLink to='/my-order' className='relative text-xs'>
+                        <FaCartPlus size={20}/>
+                        <span className='bg-customYellow  absolute bottom--1 left-4 w-4 h-4 rounded-full flex justify-center text-black'>{context.count}</span>
                     </NavLink>
                 </li>
             </ul>

@@ -10,6 +10,9 @@ export default {
         'dancing': ['"Dancing Script"', 'cursive'],
         'orbitron': ['"Orbitron"', 'sans-serif'],
       },
+      colors: {
+        customYellow: '#e5f33c',
+      },
     },
   },
   plugins: [],
