@@ -1,0 +1,13 @@
+.product-detail{
+    width: 360px;
+    height: calc(100vh - 82px);
+    margin-top: 1px;
+}
+.productDetail-image{
+    max-height: 300px;
+    width: 100%;
+}
+.productDetail-info{
+    max-height: 400px;
+    overflow-y: auto;
+}

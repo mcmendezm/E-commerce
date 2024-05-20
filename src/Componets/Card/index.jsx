@@ -1,9 +1,17 @@
+import { MdAdd } from "react-icons/md";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context";
 const Card = (data) => {
-    const context= useContext(ShoppingCartContext)
+    const context = useContext(ShoppingCartContext);
+    const showProduct = (productDetail) => {
+        context.openProductDetail()
+        context.setProductToShow(productDetail)
+    }
     return (
-        <div className="bg-white cursor-pointer w-56 h-60 rounded-lg">
+        <div
+            className="bg-white cursor-pointer w-56 h-60 rounded-lg"
+            onClick={()=>showProduct(data.data)}
+        >
         <figure className="relative mb-2 w-full h-4/5">
             <span className="absolute bottom-0 left-0 bg-white/60 rounded-lg text-black text-sm m-2 px-3 py-0.5">
                     {data.data.category}
@@ -11,8 +19,11 @@ const Card = (data) => {
             <img className="w-full h-full object-cover rounded-3xl" src={data.data.image} alt="Headphones" />
                 <button
                     className="absolute top-0 right-0 flex justify-center items-center bg-customYellow w-8 h-8 rounded-full m-2 p-1 text-lg"
-                    onClick={()=>context.setCount(context.count+1)}>
-                +
+                    onClick={() => {
+                        context.setCount(context.count + 1)
+                        /* event.stopPropagation();  */
+                    }}>
+                <MdAdd />
                 </button>
         </figure>
         <p className="flex justify-between">
