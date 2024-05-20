@@ -7,6 +7,7 @@ import { MyOrders } from '../MyOrders'
 import { NotFound } from '../NotFound'
 import { SignIn } from '../SignIn'
 import { Navbar } from '../../Componets/Navbar'
+import { CheckoutSideMenu } from '../../Componets/CheckoutSideMenu'
 import './App.css'
 
 
@@ -14,7 +15,8 @@ function App() {
   return (
     <ShoppingCartProvide>
       <BrowserRouter>
-        <Navbar/>
+        <Navbar />
+        <CheckoutSideMenu/>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/my-account' element={<MyAccount/>} />

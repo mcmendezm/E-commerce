@@ -1,11 +1,20 @@
 import { MdAdd } from "react-icons/md";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context";
+
 const Card = (data) => {
     const context = useContext(ShoppingCartContext);
     const showProduct = (productDetail) => {
         context.openProductDetail()
         context.setProductToShow(productDetail)
+    }
+    const addProductsToCart = (event, productData) => {
+        event.stopPropagation()
+        context.setCount(context.count + 1)
+        context.setCartProducts([...context.cartProducts, productData]);
+        context.openCheckoutSideMenu();
+        context.closeProductDetail()
+        console.log('CART: ', context.cartProducts)
     }
     return (
         <div
@@ -19,10 +28,7 @@ const Card = (data) => {
             <img className="w-full h-full object-cover rounded-3xl" src={data.data.image} alt="Headphones" />
                 <button
                     className="absolute top-0 right-0 flex justify-center items-center bg-customYellow w-8 h-8 rounded-full m-2 p-1 text-lg"
-                    onClick={() => {
-                        context.setCount(context.count + 1)
-                        /* event.stopPropagation();  */
-                    }}>
+                    onClick={(event) => addProductsToCart(event, data.data)}>
                 <MdAdd />
                 </button>
         </figure>
