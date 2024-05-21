@@ -12,6 +12,16 @@ const CheckoutSideMenu = () => {
         const filteredProducts = context.cartProducts.filter(product => product.id != id)
         context.setCartProducts(filteredProducts)
     }
+    const handleCheckout = () => {
+        const orderToAdd = {
+            date: '01.02.24',
+            products: context.cartProducts,
+            totalProducts: context.cartProducts.length,
+            totalPrice: totalPrice(context.cartProducts),
+        }
+        context.setOrder([...context.order, orderToAdd]),
+        context.setCartProducts([])
+    }
     return (
         <aside
             className={`${context.isCheckoutSideMenuOpen ? 'flex' : 'hidden'} z-10 checkout-side-menu flex-col fixed right-0 border-4 border-customYellow  bg-white/95 rounded-lg text-black`}>
@@ -21,7 +31,7 @@ const CheckoutSideMenu = () => {
                     className='cursor-pointer'
                     onClick={() => context.closeCheckoutSideMenu()} />
             </div>
-            <div className='font-orbitron overflow-y-auto'>
+            <div className='font-orbitron overflow-y-auto flex-1'>
             {
                 context.cartProducts.map(product => (
                     <OrderCard
@@ -35,12 +45,16 @@ const CheckoutSideMenu = () => {
                 ))
             }
             </div>
-            <div className='px-6 py-10 font-orbitron '>
+            <div className='px-6 py-2 font-orbitron '>
                     <hr className="w-full border-2"/>
                 <p className="flex justify-end py-2">
                     <span className="px-8">Total: </span>
                     <span>${totalPrice(context.cartProducts)}</span>
                 </p>
+                <button
+                    className='bg-black h-20 px-20 my-1 mx-10 text-white font-orbitron rounded-lg text-lg'
+                    onClick={()=>handleCheckout()}
+                >Checkout</button>
             </div>
         </aside>
     )

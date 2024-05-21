@@ -11,6 +11,8 @@ ShoppingCartProvide.propTypes = {
     const [count, setCount] = useState(0)
     //Shopping Cart - Add product to cart
     const [cartProducts, setCartProducts] = useState([]);
+    //Shopping Cart - Order
+    const [order, setOrder] = useState([]);
 
     //Product Detail - Open/Close
     const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
@@ -41,6 +43,8 @@ ShoppingCartProvide.propTypes = {
                 setIsCheckoutSideMenuOpen,
                 openCheckoutSideMenu,
                 closeCheckoutSideMenu,
+                order,
+                setOrder
             }}>
         {children}
     </ShoppingCartContext.Provider>

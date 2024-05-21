@@ -8,12 +8,11 @@ import { NotFound } from '../NotFound'
 import { SignIn } from '../SignIn'
 import { Navbar } from '../../Componets/Navbar'
 import { CheckoutSideMenu } from '../../Componets/CheckoutSideMenu'
-import './App.css'
 import { Jewelery } from '../Jewelery'
-import { Others } from '../Othes'
 import { Electronics } from '../Electronics'
 import { WomenClothing } from '../WomenClothing'
 import { MenClothing } from '../MenClothing'
+import './App.css'
 
 
 function App() {
@@ -32,7 +31,6 @@ function App() {
           <Route path='/women-clothing' element={<WomenClothing />} />
           <Route path='/electronics' element={<Electronics />} />
           <Route path='/jewelery' element={<Jewelery />} />
-          <Route path='/others' element={<Others />} />
           <Route path='/*' element={<NotFound/>} />
         </Routes>
       </BrowserRouter>
