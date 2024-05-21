@@ -4,10 +4,10 @@ import { Layout } from "../../Componets/Layout"
 import { ProductDetail } from "../../Componets/ProductDetail"
 
 
-function Home() {
+function MenClothing() {
     const [items, setItems] = useState(null)
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
+        fetch("https://fakestoreapi.com/products/category/men's clothing")
             .then(response => response.json())
             .then(data => setItems(data))
     },[])
@@ -26,4 +26,4 @@ function Home() {
     )
 }
 
-export { Home }
+export { MenClothing }

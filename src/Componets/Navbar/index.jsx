@@ -74,7 +74,7 @@ const Navbar = () => {
             </ul>
             <ul className="flex items-center gap-5">
                 <li>
-                    <NavLink className='text-black/50'>
+                    <NavLink className='text-white/50'>
                         camila@gmail.com
                     </NavLink>
                 </li>

@@ -9,6 +9,11 @@ import { SignIn } from '../SignIn'
 import { Navbar } from '../../Componets/Navbar'
 import { CheckoutSideMenu } from '../../Componets/CheckoutSideMenu'
 import './App.css'
+import { Jewelery } from '../Jewelery'
+import { Others } from '../Othes'
+import { Electronics } from '../Electronics'
+import { WomenClothing } from '../WomenClothing'
+import { MenClothing } from '../MenClothing'
 
 
 function App() {
@@ -22,7 +27,12 @@ function App() {
           <Route path='/my-account' element={<MyAccount/>} />
           <Route path='/my-order' element={<MyOrder/>} />
           <Route path='/my-orders' element={<MyOrders/>} />
-          <Route path='/sign-in' element={<SignIn/>} />
+          <Route path='/sign-in' element={<SignIn />} />
+          <Route path='/men-clothing' element={<MenClothing />} />
+          <Route path='/women-clothing' element={<WomenClothing />} />
+          <Route path='/electronics' element={<Electronics />} />
+          <Route path='/jewelery' element={<Jewelery />} />
+          <Route path='/others' element={<Others />} />
           <Route path='/*' element={<NotFound/>} />
         </Routes>
       </BrowserRouter>
