@@ -1,8 +1,8 @@
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { ShoppingCartContext } from "../../Context";
 import { useContext } from "react";
-import './styles.css'
 import { OrderCard } from "../OrderCard";
+import './styles.css'
 
 const CheckoutSideMenu = () => {
     const context = useContext(ShoppingCartContext);
