@@ -18,7 +18,7 @@ const Card = (data) => {
     }
     return (
         <div
-            className="bg-white cursor-pointer w-56 h-60 rounded-lg"
+            className="bg-white cursor-pointer w-56 h-60 rounded-lg "
             onClick={()=>showProduct(data.data)}
         >
         <figure className="relative mb-2 w-full h-4/5">
@@ -32,7 +32,7 @@ const Card = (data) => {
                 <MdAdd />
                 </button>
         </figure>
-        <p className="flex justify-between">
+        <p className="flex justify-between font-orbitron ">
                 <span className="text-xs font-light">{data.data.title}</span>
             <span className="text-lg font-medium">${data.data.price}</span>
         </p>

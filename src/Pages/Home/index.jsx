@@ -13,8 +13,8 @@ function Home() {
     },[])
     return (
         <Layout>
-            Home
-            <div className=" grid gap-10 grid-cols-4 w-full max-w-screen-lg">  
+
+            <div className=" grid gap-10 grid-cols-4 w-full max-w-screen-lg my-20">  
             {
                 items?.map(item => (
                     <Card data={item} key={ item.id} />

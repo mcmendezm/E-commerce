@@ -12,7 +12,7 @@ const Navbar = () => {
             <ul className="flex items-center gap-5">
                 <li className="font-semibold text-4xl font-dancing mr-10">
                     <NavLink
-                        to='/shopi'
+                        to='/'
                         >
                         Shopi
                     </NavLink>
