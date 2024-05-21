@@ -62,15 +62,6 @@ const Navbar = () => {
                         Jewelery
                     </NavLink>
                 </li>
-                <li>
-                    <NavLink 
-                    to='/others'
-                    className={({ isActive }) =>
-                    isActive ? activeStyle : undefined
-                    }>
-                        Others
-                    </NavLink>
-                </li>
             </ul>
             <ul className="flex items-center gap-5">
                 <li>
