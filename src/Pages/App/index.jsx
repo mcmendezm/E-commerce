@@ -24,7 +24,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/my-account' element={<MyAccount/>} />
-          <Route path='/my-order' element={<MyOrder/>} />
+          <Route path='/my-order' element={<MyOrder />} />
+          <Route path='/my-orders/last' element={<MyOrder/>} />
           <Route path='/my-orders' element={<MyOrders/>} />
           <Route path='/sign-in' element={<SignIn />} />
           <Route path='/men-clothing' element={<MenClothing />} />

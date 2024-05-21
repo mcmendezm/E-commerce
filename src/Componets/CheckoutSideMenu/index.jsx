@@ -1,4 +1,5 @@
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import { ShoppingCartContext } from "../../Context";
 import { useContext } from "react";
 import { OrderCard } from "../OrderCard";
@@ -13,14 +14,18 @@ const CheckoutSideMenu = () => {
         context.setCartProducts(filteredProducts)
     }
     const handleCheckout = () => {
+        const now = new Date();
+        const formattedDate = now.toISOString(); 
+
         const orderToAdd = {
-            date: '01.02.24',
+            date: formattedDate,
             products: context.cartProducts,
             totalProducts: context.cartProducts.length,
             totalPrice: totalPrice(context.cartProducts),
         }
         context.setOrder([...context.order, orderToAdd]),
         context.setCartProducts([])
+        context.setCount(0)
     }
     return (
         <aside
@@ -51,10 +56,12 @@ const CheckoutSideMenu = () => {
                     <span className="px-8">Total: </span>
                     <span>${totalPrice(context.cartProducts)}</span>
                 </p>
+                <Link to='/my-orders/last'>
                 <button
                     className='bg-black h-20 px-20 my-1 mx-10 text-white font-orbitron rounded-lg text-lg'
                     onClick={()=>handleCheckout()}
                 >Checkout</button>
+                </Link>
             </div>
         </aside>
     )
