@@ -1,11 +1,13 @@
 import { IoIosCloseCircle } from "react-icons/io";
 import PropTypes from 'prop-types'
 
-const OrderCard = ({ title, imageUrl, price }) => {
-  OrderCard.propTypes = {
+const OrderCard = ({ id, title, imageUrl, price, handleDelete}) => {
+    OrderCard.propTypes = {
+    id: PropTypes.node.isRequired,
     title: PropTypes.node.isRequired,
     imageUrl: PropTypes.node.isRequired,
     price: PropTypes.node.isRequired,
+    handleDelete: PropTypes.node.isRequired,
   }
     return (
         <div className='flex justify-between items-center mx-2 my-1 bg-customYellow rounded-2xl p-2'>
@@ -19,6 +21,7 @@ const OrderCard = ({ title, imageUrl, price }) => {
                 <p className='text-lg font-medium'>${price}</p>
                 <IoIosCloseCircle size={18}
                     className='cursor-pointer'
+                    onClick={()=> handleDelete(id)}
                 />
             </div>
         </div>
