@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types'
 
 export const ShoppingCartContext = createContext();
@@ -25,7 +25,26 @@ ShoppingCartProvide.propTypes = {
     const closeCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(false);
     //Product Detail - Show product
     const [productToShow, setProductToShow] = useState({});
-    
+    //Get Products
+    const [items, setItems] = useState(null)
+
+    const [filteredItems, setFilteredItems] = useState(null)
+    //Get Products by title
+    const [searchByTitle, setSearchByTitle] = useState(null)
+    console.log('Search', searchByTitle)
+
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+            .then(response => response.json())
+            .then(data => setItems(data))
+    }, [])
+    const filteredItemsByTitle = (items, searchByTitle) => {
+        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase()))
+    }
+    useEffect(() => {
+        if (searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
+    }, [items, searchByTitle])
+    console.log('filter', filteredItems)
     return (
         <ShoppingCartContext.Provider
             value={{
@@ -44,7 +63,12 @@ ShoppingCartProvide.propTypes = {
                 openCheckoutSideMenu,
                 closeCheckoutSideMenu,
                 order,
-                setOrder
+                setOrder,
+                items,
+                setItems,
+                searchByTitle,
+                setSearchByTitle,
+                filteredItems,
             }}>
         {children}
     </ShoppingCartContext.Provider>
