@@ -20,7 +20,7 @@ function App() {
         <Navbar />
         <CheckoutSideMenu/>
         <Routes>
-          <Route path='/' element={<Home/>} />
+          <Route path='/E-commerce' element={<Home/>} />
           <Route path='/my-order' element={<MyOrder />} />
           <Route path='/my-orders/last' element={<MyOrder />} />
           <Route path='/my-orders/:id' element={<MyOrder/>} />

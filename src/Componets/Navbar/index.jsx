@@ -12,14 +12,14 @@ const Navbar = () => {
             <ul className="flex items-center gap-5">
                 <li className="font-semibold text-4xl font-dancing mr-10">
                     <NavLink
-                        to='/'
+                        to='/E-commerce/'
                         >
                         Shopi
                     </NavLink>
                 </li>
                 <li>
                     <NavLink
-                        to='/'
+                        to='/E-commerce/'
                         className={({ isActive }) =>
                         isActive ? activeStyle : undefined
                         }>
