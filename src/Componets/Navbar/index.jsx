@@ -76,16 +76,6 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/my-account'>
-                        My account
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to='/sign-in'>
-                        Sign In
-                    </NavLink>
-                </li>
-                <li>
                     <NavLink to='/my-order' className='relative text-xs'>
                         <FaCartPlus size={20}/>
                         <span className='bg-customYellow  absolute bottom--1 left-4 w-4 h-4 rounded-full flex justify-center text-black'>{context.count}</span>
